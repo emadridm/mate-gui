@@ -1,10 +1,10 @@
 {
-  "name": "mate",
+  "name": "mate-gui",
   "version": "1.0.0",
   "description": "",
-  "main": "./build/main.js",
+  "main": "./dist/main.bundle.js",
   "scripts": {
-    "clean": "rm -rf build",
+    "clean": "rm -rf build dist",
     "prebuild": "npm run clean",
     "build": "tsc",
     "postbuild": "cp ./src/index.html ./build",
@@ -15,8 +15,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.61",
     "electron": "15.3.0",
-    "typescript": "^4.4.4"
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4",
+    "webpack": "^5.64.0",
+    "webpack-cli": "^4.9.1"
   }
 }
