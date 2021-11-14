@@ -1,6 +1,8 @@
 import * as path from 'path';
+import * as Webpack from 'webpack';
+import * as HtmlWebPlugin from 'html-webpack-plugin';
 
-const baseConfig = {
+const baseConfig: Webpack.Configuration = {
     mode: 'development',
     resolve: {
         extensions: ['ts', 'tsx', 'js', 'jsx'],
@@ -10,7 +12,7 @@ const baseConfig = {
     },
 }
 
-const mainConfig = {
+const mainConfig: Webpack.Configuration = {
     ...baseConfig,
     name: 'main',
     target: "electron-main",
@@ -19,9 +21,13 @@ const mainConfig = {
         path: path.join(__dirname, "dist"),
         filename: "main.bundle.js",
     },
+    plugins: [new HtmlWebPlugin({
+        title: 'Mate',
+        template: './src/index.html'
+    })]
 };
 
-const preloadConfig = {
+const preloadConfig: Webpack.Configuration = {
     ...baseConfig,
     name: 'preload',
     target: "electron-preload",
