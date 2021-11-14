@@ -1,2 +1,2 @@
 # mate-gui
-mate
+Mate Graphical User Interface
