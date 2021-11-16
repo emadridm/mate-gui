@@ -1,6 +1,8 @@
 import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 
+process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1';
+
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,

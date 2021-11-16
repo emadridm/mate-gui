@@ -1,8 +1,10 @@
-import react from "react";
-import { ReactDOM } from "react-dom";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
-function RenderApp() {
-    return <h2>Hello React </h2>;
+const RenderApp: React.FC = () => {
+    return <h2>Hello React</h2>;
 }
 
-ReactDOM.render(RenderApp, document.getElementById("root"));
+
+ReactDOM.render(<RenderApp />, document.getElementById("root"));
+
